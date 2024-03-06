@@ -1,0 +1,12 @@
+[
+	{
+		"protocol": "tcp",
+		"port": 80,
+		"service": "apache2"
+	},
+	{
+		"protocol": "tcp",
+		"port": 6379,
+		"service": "redis-server"
+	}
+]

@@ -1,0 +1,38 @@
+[
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	},
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	},
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	},
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	},
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	},
+	{
+		"protocol": String,
+		"port": Int,
+		"service": String,
+		"in_baseline": Boolean
+	}
+]

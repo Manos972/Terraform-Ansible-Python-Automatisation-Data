@@ -1,0 +1,48 @@
+---
+- name: Installer Apache2, OpenSSH et Redis sur Ubuntu
+  hosts: Ubuntu
+  become: true
+  tasks:
+    - name: Mise à jour du gestionnaire de paquets
+      apt:
+        update_cache: yes
+    - name: Installation d'Apache2
+      apt:
+        name: apache2
+        state: present
+    - name: Démarrage du service Apache2
+      service:
+        name: apache2
+        state: started
+        enabled: true
+    - name: Installation d'OpenSSH
+      apt:
+        name: openssh-server
+        state: present
+    - name: Démarrage du service OpenSSH
+      service:
+        name: ssh
+        state: started
+        enabled: true
+    - name: Installation de Redis
+      apt:
+        name: redis-server
+        state: present
+    - name: Démarrage du service Redis
+      service:
+        name: redis-server
+        state: started
+        enabled: true
+    - name: Verifie que net-tool est present
+      apt:
+        name: net-tools
+        state: present
+        update_cache: yes
+    - name: Copie le script Pyton vers le distant dans le dossier User
+      copy:
+        src: ./../automate_ports_rapatriation.py
+        dest: /home/ubuntu/script.py
+    - name: Copie le fichier baseline necessaire au script vers le distant dans le dossier user
+      copy:
+        src: ./../port_baseline.json
+        dest: /home/ubuntu/port_baseline.json
